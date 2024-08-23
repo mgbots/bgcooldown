@@ -6,10 +6,8 @@ document.getElementById('cooldown-form').addEventListener('submit', function(eve
     const now = Math.floor(Date.now() / 1000); // Current Unix time
     const cooldownVariable = `{solve_equation[{time_now_unix}+${cooldownSeconds}]}`;
     
-    const resultText = `The variable you need to use is:\n\n` +
-        `${cooldownVariable}`;
-    
-    document.getElementById('result-text').innerText = resultText;
+    // Display only the variable
+    document.getElementById('result-text').innerText = cooldownVariable;
     
     // Button click effect
     const button = event.target.querySelector('button');
