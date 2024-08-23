@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooldown Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-icon left">
+            <img src="icon-left.png" alt="Left Icon">
+        </div>
+        <h1>Cooldown Variable Generator</h1>
+        <div class="header-icon right">
+            <img src="icon-right.png" alt="Right Icon">
+        </div>
+    </header>
+    <main>
+        <form id="cooldown-form">
+            <div class="form-group">
+                <label for="cooldown_seconds">Cooldown Duration (seconds):</label>
+                <input type="number" id="cooldown_seconds" name="cooldown_seconds" required>
+            </div>
+            <button type="submit">Generate Variable</button>
+        </form>
+        <div id="generator">
+            <div id="result">
+                <div id="result-text">Your generated variable will appear here...</div>
+            </div>
+        </div>
+        <div id="how-to">
+            <h2>How to Use the Generated Cooldown Variable</h2>
+            <p>Follow these steps to implement your cooldown variable:</p>
+            <ol>
+                <li><strong>Create a Set Variable Block:</strong> 
+                    <p>Use the generated variable in a Set Variable Block in your BotGhost setup. Assign the generated variable to a custom variable name, which you will use in your comparison condition.</p>
+                    <div class="instruction-image">
+                        <h3>Example Set Variable Block</h3>
+                        <img src="example-set-variable.png" alt="Example Set Variable Block">
+                    </div>
+                </li>
+                <li><strong>Set Up the Comparison Condition:</strong> 
+                    <p>Use the custom variable from the Set Variable Block in a Comparison Condition. Set the following parameters:</p>
+                    <ul>
+                        <li><strong>Base Value:</strong> {time_now_unix}</li>
+                        <li><strong>Comparison Value:</strong> Your custom variable name</li>
+                        <li><strong>Comparison Type:</strong> Greater than</li>
+                    </ul>
+                    <p>If the base value is NOT greater than the comparison value, deny usage of the command.</p>
+                    <div class="instruction-image">
+                        <h3>Example Comparison Condition</h3>
+                        <img src="example-comparison-condition.png" alt="Example Comparison Condition">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </main>
+    <footer>
+        <a href="https://magicgamer.carrd.co/" target="_blank">
+            <span>Made with </span><span>🩵 by MagicGamer</span>
+        </a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
